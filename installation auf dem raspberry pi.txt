@@ -1,0 +1,26 @@
+1. SD-Karte mit Image z.B. Rasbian bespielen.
+   dd if=2013-12-20-wheezy.img | pv | dd of=/dev/sdx
+
+2. Die Datei wimd.sh in das Verzeichnis etc/init.d auf der SD-Karte kopieren und in wimd umbennen.
+
+3. Die Dateirechte der Datei wimd kontrolieren ggfls. ändern auf 755
+   chmod 755 wimd
+
+4. in Verzeichnis etc/rc2.d wechseln und symbolischen Link auf Datei etc/init.d/wimd setzen
+   ln -s ../init.d/wimd S10wimd
+
+5. in Verzeichnis etc/rc3.d wechseln und symbolischen Link auf Datei etc/init.d/wimd setzen
+   ln -s ../init.d/wimd S10wimd
+
+6. in Verzeichnis etc/rc4.d wechseln und symbolischen Link auf Datei etc/init.d/wimd setzen
+   ln -s ../init.d/wimd S10wimd
+
+7. in Verzeichnis etc/rc5.d wechseln und symbolischen Link auf Datei etc/init.d/wimd setzen
+   ln -s ../init.d/wimd S10wimd
+
+
+-- oder --
+1. Die Datei wimd.sh in das Verzeichnis /bin auf der SD-Karte kopieren und in wimd umbennen.
+
+2. in die Datei /etc/rc.local ans Ende wimd eintragen
+
