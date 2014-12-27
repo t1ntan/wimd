@@ -1,0 +1,12 @@
+nc kann in IP-Paketen Nachrichten an einen bestimten Rechner schicken.
+Der "empfangende" Rechner kann mit nc in einen "Horchmodus" versetzt werden.
+
+server: nc -l 0.0.0.0 12101
+host: echo "hello" | nc 192.168.1.255 12101
+
+--------------------
+
+In Python zwei Skripte schreiben.
+
+Ein Skript erstellt ein Broadcastpaket mit den gewünschten Daten, das andere
+Skript hortch nach diesen Broadcastpaketen.
