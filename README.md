@@ -1,4 +1,4 @@
-wimd
+wimd (where is my device)
 ====
 
-wimd is a small and dirty method for the Raspberry Pi to notify the IP address to a web server.
+wimd ist eine kleine, "schmutzige" Methode mit der ein RasberryPi seine IP-Adresse an einen Webserver melden kann.

@@ -113,21 +113,4 @@ if ($handle == true) {
 } else {
     echo "Fehler beim speichern.";
 }
-
-/*
-// Schreiben des neuen Wertes
-$handle = fopen ("devices.csv", "w");
-fwrite ($handle, $datensatz);
-fclose ($handle);
-*/
-
-/*
-// ist Datei devices.csv vorhanden
-if (file_exists("devices.csv")) {
-    //
-} else {
-    // erstelle Datei
-}
-*/
-
 ?>
