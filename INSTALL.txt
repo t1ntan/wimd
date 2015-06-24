@@ -1,5 +1,7 @@
 1. SD-Karte mit Image z.B. Rasbian bespielen.
    dd if=2013-12-20-wheezy.img | pv | dd of=/dev/sdx
+   oder
+   sudo dcfldd if=./2015-05-05-raspbian-wheezy.img of=/dev/sdb
 
 2. Die Datei wimd.sh in das Verzeichnis etc/init.d auf der SD-Karte kopieren und in wimd umbennen.
 
