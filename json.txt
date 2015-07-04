@@ -4,15 +4,15 @@
   "version":"0.1"
     "interfaces":[{
     "name":"eth0",
-    "type":"cable",
     "mac":"00:00:00:00:00:00",
     "ipv4":"192.168.1.2",
     "ipv6":"fdf3:2b94:3f20:10::67d"
   }]
 }
 
+# mit type-Element um was für eine Schnittstelle es sich handelt, z.B ethernet oder wireless
 {"hostname":"raspberrypi",
-  "version":"0.1"
+  "version":"0.2"
     "interfaces":[{
     "name":"wlan0",
     "type":"wireless",
