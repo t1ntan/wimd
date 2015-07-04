@@ -5,10 +5,10 @@
 $clean_hostname = "";
 $clean_eth0_mac = "";
 $clean_eth0_ip4 = "";
-// $clean_eth0_ip6 = "";
+$clean_eth0_ip6 = "";
 $clean_wlan0_mac = "";
 $clean_wlan0_ip4 = "";
-// $clean_wlan0_ip6 = "";
+$clean_wlan0_ip6 = "";
 
 
 $datei = 'devices.csv';
@@ -85,6 +85,28 @@ if (isset($_GET['eth0_ipv4'])) {
 } // ende vorhanden-prüfung
 
 
+// prüfen ob eth0_ipv6 in $_GET vorhanden ist.
+if (isset($_GET['eth0_ipv6'])) {
+
+    // prüfen ob eth0_ipv6 nicht leer ist.
+    if (!empty($_GET['eth0_ipv6'])) {
+
+        // prüfen ob eth0_ipv6 eine gültige IPv6-Nummer ist.
+        if (preg_match('/^(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))$/', $_GET['eth0_ipv6'])) {
+            $clean_eth0_ipv6 = $_GET['eth0_ipv6'];
+        } else {
+            $clean_eth0_ipv6 = "eth0_ipv6-Formatfehler";
+        } // ende der regex-prüfung
+
+    } else {
+        $clean_eth0_ipv6 = "eth0_ipv6-Variable ist leer!";
+    } // ende leer-prüfung
+
+} else {
+        $clean_eth0_ipv6 = "eth0_ipv6-Variable fehlt!";
+} // ende vorhanden-prüfung
+
+
 // prüfen ob wlan0_mac in $_GET vorhanden ist.
 if (isset($_GET['wlan0_mac'])) {
 
@@ -128,6 +150,28 @@ if (isset($_GET['wlan0_ipv4'])) {
 } // ende vorhanden-prüfung
 
 
+// prüfen ob wlan0_ipv6 in $_GET vorhanden ist.
+if (isset($_GET['wlan0_ipv6'])) {
+
+    // prüfen ob wlan0_ipv6 nicht leer ist.
+    if (!empty($_GET['wlan0_ipv6'])) {
+
+        // prüfen ob wlan0_ipv6 eine gültige IPv6-Nummer ist.
+        if (preg_match('/^(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))$/', $_GET['wlan0_ipv6'])) {
+            $clean_wlan0_ipv6 = $_GET['wlan0_ipv6'];
+        } else {
+            $clean_wlan0_ipv6 = "wlan0_ipv6-Formatfehler";
+        } // ende der regex-prüfung
+
+    } else {
+        $clean_wlan0_ipv6 = "wlan0_ipv6-Variable ist leer!";
+    } // ende leer-prüfung
+
+} else {
+        $clean_wlan0_ipv6 = "wlan0_ipv6-Variable fehlt!";
+} // ende vorhanden-prüfung
+
+
 /*
  * zeitwerte für den Datensatz ermitteln
  */
@@ -147,7 +191,7 @@ $zeit = date("H:i:s", $timestamp);
  */
 
 // zu speichernden Datensatz erstellen
-$datensatz = "'".$datum."';'".$zeit."';'".$clean_hostname."';'".$clean_eth0_mac."';'".$clean_eth0_ipv4."';'".$clean_wlan0_mac."';'".$clean_wlan0_ipv4."'"."<br />\n";
+$datensatz = "'".$datum."';'".$zeit."';'".$clean_hostname."';'".$clean_eth0_mac."';'".$clean_eth0_ipv4."';'".$clean_eth0_ipv6."';'".$clean_wlan0_mac."';'".$clean_wlan0_ipv4."';'".$clean_wlan0_ipv6."'"."<br />\n";
 
 // prüfen ob die Datei devices.csv existiert
 $handle = fopen($datei, a);

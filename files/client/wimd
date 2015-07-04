@@ -32,6 +32,5 @@
 
     # Daten an Webserver per GET-Methode übermitteln
 #    echo "sende Netzwerkdaten des RasPi ... "
-#    wget --delete-after --quiet --no-check-certificate "https://t1ntan.crew.c-base.org/wimd/receive.php?hostname=$info_hostname&eth0_mac=$info_eth0_mac&eth0_ipv4=$info_eth0_ipv4&eth0_ipv6=$info_eth0_ipv6&wlan0_mac=$info_wlan0_mac&wlan0_ipv4=$info_wlan0_ipv4&wlan0_ipv6=$info_wlan0_ipv6"
-    echo "wget --delete-after --quiet --no-check-certificate \"https://t1ntan.crew.c-base.org/wimd/receive.php?hostname=$info_hostname&eth0_mac=$info_eth0_mac&eth0_ipv4=$info_eth0_ipv4&eth0_ipv6=$info_eth0_ipv6&wlan0_mac=$info_wlan0_mac&wlan0_ipv4=$info_wlan0_ipv4&wlan0_ipv6=$info_wlan0_ipv6\""
+    wget --delete-after --quiet --no-check-certificate "https://t1ntan.crew.c-base.org/wimd/receive.php?hostname=$info_hostname&eth0_mac=$info_eth0_mac&eth0_ipv4=$info_eth0_ipv4&eth0_ipv6=$info_eth0_ipv6&wlan0_mac=$info_wlan0_mac&wlan0_ipv4=$info_wlan0_ipv4&wlan0_ipv6=$info_wlan0_ipv6"
 
